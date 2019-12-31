@@ -7,9 +7,7 @@
         v-bind:key="key"
         class="col-xs-12 col-md-4"
       >
-        <div>
-          <profile-item v-bind="item" />
-        </div>
+        <profile-item v-bind="item" />
       </div>
     </div>
   </div>
