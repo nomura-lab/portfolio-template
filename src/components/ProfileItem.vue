@@ -1,6 +1,6 @@
 <template>
   <div
-    class="profile-item card text-center w-100"
+    class="profile-item card text-center"
     ontouchstart=""
     v-on:click="turn()"
   >
@@ -15,11 +15,11 @@
     </div>
 
     <div v-else>
-      <p
-        style="white-space: pre-line;"
-        v-text="comment"
-        class="card-body p-2"
-      />
+      <div class="profile-title card-header text-info">{{ title }} 裏面</div>
+
+      <div class="profile-body card-body p-2 ">
+        {{ comment }}
+      </div>
     </div>
   </div>
 </template>
