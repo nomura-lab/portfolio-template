@@ -3,6 +3,11 @@
 # abort on errors
 set -e
 
+echo "VUE_APP_API_KEY=$VUE_APP_API_KEY" > ./.env
+echo "VUE_APP_MESSAGING_SENDER_ID=$VUE_APP_MESSAGING_SENDER_ID" >> ./.env
+echo "VUE_APP_APP_ID=$VUE_APP_APP_ID" >> ./.env
+echo "VUE_APP_MEASUREMENT_ID=$VUE_APP_MEASUREMENT_ID" >> ./.env
+
 # build
 npm run build
 
