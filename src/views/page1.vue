@@ -34,18 +34,16 @@
       }
     },
     computed: {
-      tableDatabase: () =>
-        firebase
-          .firestore()
-          .collection('profileitems')
-          .doc('page1')
+      tableDatabase: () => firebase.firestore().collection('profileitems')
     },
     methods: {
       listenData: function() {
         return new Promise(resolve => {
           resolve(
-            this.tableDatabase.onSnapshot(data => {
-              this.profileItems.push(data.data())
+            this.tableDatabase.get().then(snapshot => {
+              snapshot.forEach(doc => {
+                this.profileItems.push(doc.data())
+              })
             })
           )
         })
