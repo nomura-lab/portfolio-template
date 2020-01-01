@@ -8,11 +8,6 @@ echo "VUE_APP_MESSAGING_SENDER_ID=$VUE_APP_MESSAGING_SENDER_ID" >> ./.env
 echo "VUE_APP_APP_ID=$VUE_APP_APP_ID" >> ./.env
 echo "VUE_APP_MEASUREMENT_ID=$VUE_APP_MEASUREMENT_ID" >> ./.env
 
-
-
-echo ./.env
-
-
 # build
 npm run build
 
