@@ -10,7 +10,7 @@
         <profile-item v-bind="item" />
       </div>
     </div>
-    <button v-on:click="listenData">{{ members }}</button>
+    <button v-on:click="listenData">ADD DATA</button>
   </div>
 </template>
 
