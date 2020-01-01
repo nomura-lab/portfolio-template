@@ -10,11 +10,13 @@
         <profile-item v-bind="item" />
       </div>
     </div>
+    <button v-on:click="listenData">{{ members }}</button>
   </div>
 </template>
 
 <script>
   import ProfileItem from '../components/ProfileItem.vue'
+  import firebase from '../firebase.js'
   export default {
     components: {
       ProfileItem
@@ -29,6 +31,24 @@
           { title: 'title5', description: 'description5', comment: 'comment5' },
           { title: 'title6', description: 'description6', comment: 'comment6' }
         ]
+      }
+    },
+    computed: {
+      tableDatabase: () =>
+        firebase
+          .firestore()
+          .collection('profileitems')
+          .doc('page1')
+    },
+    methods: {
+      listenData: function() {
+        return new Promise(resolve => {
+          resolve(
+            this.tableDatabase.onSnapshot(data => {
+              this.profileItems.push(data.data())
+            })
+          )
+        })
       }
     }
   }
